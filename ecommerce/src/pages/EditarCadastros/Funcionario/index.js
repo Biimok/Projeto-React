@@ -1,16 +1,15 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
-import { Link } from "react-router-dom";
 
 import {Form} from '../../../styles/formStyle';
 
-const Funcionario = () => {
+const EditarFuncionario = () => {
     const [nome, setNome] = useState('');
     const [cpf, setCpf] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     
     
-   async function handleAddFuncionario(e){
+   async function handleEditFuncionario(e){
        e.preventDefault();
        
        if(nome === '' || cpf === '') {
@@ -24,13 +23,13 @@ const Funcionario = () => {
        }
 
        try {
-           await api.put(`funcionario/${Funcionario.id}`, params);
+           await api.put('funcionario', params);
            setNome('');
            setCpf('');
            
            
        } catch (error) {
-           console.log ('handleAddFuncionario error', error);
+           console.log ('handleEditFuncionario error', error);
        }
        console.log('form submitted');
     }
@@ -38,7 +37,7 @@ const Funcionario = () => {
     return (
         <>
             <h1>Funcionario</h1>
-            <Form onSubmit={handleAddFuncionario}>
+            <Form onSubmit={handleEditFuncionario}>
                 <input value={nome} 
                 onChange={e => setNome(e.target.value)} 
                 type='text' 
@@ -49,7 +48,7 @@ const Funcionario = () => {
                 type='text' 
                 placeholder='Digite seu cpf'></input>                             
                 
-                <Link to='/funcionario'><button type='submit'>Enviar</button></Link>
+                <button type='submit'>Enviar</button>
             </Form>
             <p>{errorMessage}</p>
         </>
@@ -58,4 +57,4 @@ const Funcionario = () => {
         //62730162089
     )
 }
-export default Funcionario;
+export default EditarFuncionario;

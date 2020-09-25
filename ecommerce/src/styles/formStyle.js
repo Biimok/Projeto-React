@@ -18,8 +18,7 @@ input{
     margin-bottom: 10px;
     color:#000;
 
-    border-image-source: linear-gradient(to left, #34A87C, #BF0F0C);
-    border-image-slice: 1;
+    
     
     
 }    
@@ -33,17 +32,14 @@ button {
     width: 300px;
     align-self:center;
     justify-content:center;
-    padding:5px;
-
-    border-image-source: linear-gradient(to left, #34A87C, #BF0F0C);
-    border-image-slice: 1;
+    padding:5px;    
     border-radius: 5px;
     transition: 0.15s;
     
     
     &:hover{
         opacity:0.9;
-        border-image-source: linear-gradient(to left, #BF0F0C, #34A87C);
+        border-image-source: linear-gradient(to left, #BF0F0C, rgb(255,255,100));
         background-image: linear-gradient(to left, #b3c2d1, #9AA6B3);
         
     }
@@ -60,7 +56,7 @@ export const Textarea = styled.textarea`{
     background:#F2F2F2;
     margin-bottom: 10px;
 
-    border-image-source: linear-gradient(to left, #34A87C, #BF0F0C);
+    border-image-source: linear-gradient(to left, rgb(255,255,100), #BF0F0C);
     border-image-slice: 1;
 }
 `;

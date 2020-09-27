@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import api from '../../../services/api';
 import img from '../../../assets/sem-foto.gif';
 import Header from '../../../components/Header';
+import {Link} from "react-router-dom";
 
 import useStyles from './styles';
 import 'fontsource-roboto';
@@ -62,7 +63,7 @@ const Categoria = () => {
                 
                 
                 <GridListTileBar
-                  title={<a href={`/produto/${categoria.id}`}>{categoria.nome}</a>}
+                  title={<Link to={`/produto/${categoria.id}`}>{categoria.nome}</Link>}
                   subtitle={<span>{categoria.descricao}</span>}
                   actionIcon={
                     <IconButton aria-describedby={categoria.id} onClick={handleClick} aria-label={`info about ${categoria.nome}`} className={classes.icon}>

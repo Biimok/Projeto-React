@@ -10,7 +10,8 @@ export default createGlobalStyle`
 
 
   html, body, #root{
-    background: #ffc870;
+    background:  #303030;
+    color: #ffffff;
     
   }
 

@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  background: #ffffff;
+  background: #121212;
   border-radius: 10px;
   padding: 5px;
   img{

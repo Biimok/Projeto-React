@@ -17,6 +17,7 @@ input{
     background: #F2FDFD;
     margin-bottom: 10px;
     color:#000;
+    border-color: #5ce1e6;
 
     
     
@@ -26,7 +27,7 @@ button {
     display:flex;
     height: 40px
     font-weight: bold;
-    border: 2px solid #cccc;
+    border: 2px solid #5ce1e6;
     background: #abcd;
     
     width: 300px;
@@ -39,7 +40,7 @@ button {
     
     &:hover{
         opacity:0.9;
-        border-image-source: linear-gradient(to left, #BF0F0C, rgb(255,255,100));
+        
         background-image: linear-gradient(to left, #b3c2d1, #9AA6B3);
         
     }
@@ -55,8 +56,8 @@ export const Textarea = styled.textarea`{
     border:2px solid;
     background:#F2F2F2;
     margin-bottom: 10px;
+    border-color: #5ce1e6;
 
-    border-image-source: linear-gradient(to left, rgb(255,255,100), #BF0F0C);
-    border-image-slice: 1;
+
 }
 `;

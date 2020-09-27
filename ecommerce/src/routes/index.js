@@ -27,7 +27,7 @@ const Routes = () => (
     <Route path="/funcionario" component={Funcionario} exact/>
     <Route path="/cadastro/funcionario" component={CadastroFuncionario} exact/>
 
-    <Route path="/produto" component={Produto} exact/>
+    <Route path="/produto/:id" component={Produto} exact/>
     <Route path="/cadastro/produto" component={CadastroProduto} exact/>
 
     <Route path="/pedido" component={Pedido} exact/>

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import api from "../../services/api";
 
-import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader } from "react-pro-sidebar";
+import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
-import logo from "../../assets/logo3.png";
 
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import WorkRoundedIcon from '@material-ui/icons/WorkRounded';
 import ShoppingBasketRoundedIcon from '@material-ui/icons/ShoppingBasketRounded';
 import CategoryRoundedIcon from '@material-ui/icons/CategoryRounded';
+import {Link} from "react-router-dom";
 
 const SideBar = () => {
   const [categoria, setCategoria] = useState([]);
@@ -28,9 +28,6 @@ const SideBar = () => {
 
   return (
     <ProSidebar>
-      <SidebarHeader>
-      E-commerce
-      </SidebarHeader>
       <Menu iconShape="round">
         <MenuItem icon={<HomeRoundedIcon />}>Home</MenuItem>
         <MenuItem icon={<ShoppingBasketRoundedIcon />}>Produtos</MenuItem>
@@ -43,7 +40,7 @@ const SideBar = () => {
         <SubMenu title="Categorias" icon={<CategoryRoundedIcon />}>
           <div>
             {categoria.map((categoria) => (
-              <MenuItem>{categoria.nome}</MenuItem>
+              <MenuItem key={categoria.id}><Link to={`/produto/${categoria.id}`}/>{categoria.nome}</MenuItem>
             ))}
           </div>
         </SubMenu>

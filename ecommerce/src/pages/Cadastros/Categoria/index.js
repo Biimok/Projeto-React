@@ -1,7 +1,9 @@
 import React, {useState} from 'react'; 
 import api from '../../../services/api';
 import {Form, Textarea} from '../../../styles/formStyle';
-
+import {Wrap, Tabela, Header} from './styles';
+import logo from "../../../assets/logo3.png";
+import Sidebar from "../../../components/Sidebar";
 
 const CadastroCategoria = () => {
     const [nome, setNome] = useState('');
@@ -23,7 +25,7 @@ const CadastroCategoria = () => {
 
         try {
             await api.post('categoria', params);
-
+            alert('Sucesso');
             setNome('');
             setDescricao('');
             setErrorMessage('');
@@ -36,22 +38,31 @@ const CadastroCategoria = () => {
 
     return ( 
         <>
-        <h1> Categoria </h1>
-
-        <Form onSubmit={handleAddCategoria}>
-            <input value={nome} 
-            onChange={e => setNome(e.target.value)} 
-            type='text' 
-            placeholder='Digite o nome da Categoria'></input>
+            <Header>
+                <img src={logo} alt="logo"></img>
+            </Header>
             
-            <Textarea  value={descricao} 
-            onChange={e => setDescricao(e.target.value)} 
-            type='text' 
-            placeholder='Digite a descrição'></Textarea >
-            
-            <button type='submit'>Enviar</button>
-            </Form>
-            <p>{errorMessage}</p>
+            <Wrap> 
+            <Sidebar></Sidebar>
+                <Tabela>
+                    <div className="alinhamento">
+                        <Form onSubmit={handleAddCategoria}>
+                            <input value={nome} 
+                            onChange={e => setNome(e.target.value)} 
+                            type='text' 
+                            placeholder='Digite o nome da Categoria'></input>
+                            
+                            <Textarea  value={descricao} 
+                            onChange={e => setDescricao(e.target.value)} 
+                            type='text' 
+                            placeholder='Digite a descrição'></Textarea >
+                            
+                            <button type='submit'>Enviar</button>
+                        </Form>
+                    </div>
+                        <p>{errorMessage}</p>
+                </Tabela>
+            </Wrap>
         </>
     );
 }

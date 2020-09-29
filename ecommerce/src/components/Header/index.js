@@ -2,28 +2,39 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Title } from "./styles";
 import logo from "../../assets/logo3.png";
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const Header = ({ title }) => {
   return (
     <>
       <Container>
         <img src={logo} alt="" />
-        
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">LOGOUT</Link>
           </li>
           <li>
-            <Link to="/categoria">Categorias</Link>
+            |
+          </li> 
+          <li>
           </li>
           <li>
-            <Link to="/produto">Produtos</Link>
+            <Link to="/categoria">CATEGORIA</Link>
           </li>
           <li>
-            <Link to="/funcionario">Funcionarios</Link>
-          </li>   
+            |
+          </li> 
+          <li>
+          </li>
+          <ShoppingCartIcon fontSize='small' style={{ color: '#5ce1e6'}}></ShoppingCartIcon> 
+          <li></li>
+          <li>
+            <Link to="/pedido">
+              Meu carrinho
+            </Link>
+            
+          </li> 
         </ul>
-        
       </Container>
       <Title>{title}</Title>
     </>
@@ -31,3 +42,4 @@ const Header = ({ title }) => {
 };
 
 export default Header;
+

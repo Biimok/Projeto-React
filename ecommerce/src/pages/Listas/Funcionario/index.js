@@ -3,8 +3,10 @@ import api from '../../../services/api';
 import Header from '../../../components/Header'
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
 import { Link } from "react-router-dom";
+import Modal from '../../../components/Modal/Funcionario';
+import SideBar from '../../../components/Sidebar/index';
+import { FuncStyle, Wrap, Tabela } from './style';
 // import { Funcionario } from './styles';
 
 const Funcionario = () => {
@@ -30,30 +32,37 @@ const Funcionario = () => {
 
     return (
         <>
-        <Header/>
-        {/* <Funcionario> */}
-        <div>
-        <span>
-            Adicionar novo funcionário
-            <Link to='/cadastro/funcionario'><AddCircleIcon size={22}  style={{marginLeft: 10, marginTop: 20}}/></Link> 
-        </span>
-        
-        </div>
-        {/* </Funcionario> */}
-            <div>
-                {funcionario.map((funcionario)=> (
-                    <div key={funcionario.id}>
-                        <strong>{funcionario.nome}</strong>
-                        <p>{funcionario.cpf}</p>
+            <Header />
+        <Wrap> 
+            <SideBar></SideBar>
+            
+            <Tabela>
+                    <div>
                         <span>
-                        <>
-                           <DeleteIcon size={22} onClick={() => removeFuncionario(funcionario)} style={{marginRight: 10, cursor:"pointer"}} />
-                           <Link to='/cadastro/funcionario'><EditIcon size={22} style={{marginRight: 10, cursor:"pointer"}} /></Link>
-                        </>
+                            Adicionar novo funcionário
+                            <Link to='/cadastro/funcionario'><AddCircleIcon size={22}  style={{marginLeft: 10, marginTop: 20}}/></Link> 
                         </span>
+                        
                     </div>
+                    {funcionario.map((funcionario)=> (
+                    <FuncStyle key={funcionario.id}>
+                       
+                            <div className="nome">
+                                <strong>{funcionario.nome}</strong>
+                            </div>
+                            <div className="bla">
+                                <p>{funcionario.cpf}</p>
+                            </div>
+                            <div className="preco">
+                               <span>
+                                    <DeleteIcon size={22} onClick={() => removeFuncionario(funcionario)} style={{marginRight: 10, cursor:"pointer"}} />
+                                    <Modal funcionario={funcionario}/>
+                                </span>
+                            </div>
+                    </FuncStyle>
                 ))}                
-            </div>
+            </Tabela>   
+        </Wrap>
         </>
     );
 }

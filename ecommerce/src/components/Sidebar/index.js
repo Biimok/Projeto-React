@@ -27,15 +27,14 @@ const SideBar = () => {
   }, []);
 
   return (
-    <ProSidebar>
-      <Menu iconShape="round">
-        <MenuItem icon={<HomeRoundedIcon />}>Home</MenuItem>
-        <MenuItem icon={<ShoppingBasketRoundedIcon />}>Produtos</MenuItem>
+    <ProSidebar >
+      <Menu style={{color:"#5ce1e6"}} iconShape="round">
+        <MenuItem icon={<HomeRoundedIcon />}><Link to={`/`}/>Home</MenuItem>
+        <MenuItem icon={<ShoppingBasketRoundedIcon />}><Link to={`/produto/1`}/>Produtos</MenuItem>
         <SubMenu title="Administração" icon={<WorkRoundedIcon />}>
-          <MenuItem>Cadastrar Cliente</MenuItem>
-          <MenuItem>Cadastrar Funcionário</MenuItem>
-          <MenuItem>Cadastrar Categoria</MenuItem>
-          <MenuItem>Cadastrar Produto</MenuItem>
+          <MenuItem><Link to={`/cadastro/funcionario`}/>Cadastrar Funcionário</MenuItem>
+          <MenuItem><Link to={`/cadastro/categoria`}/>Cadastrar Categoria</MenuItem>
+          <MenuItem><Link to={`/cadastro/produto`}/>Cadastrar Produto</MenuItem>
         </SubMenu>
         <SubMenu title="Categorias" icon={<CategoryRoundedIcon />}>
           <div>

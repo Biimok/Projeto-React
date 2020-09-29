@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FuncStyle = styled.div`
+export const ProdutoStyle = styled.div`
     display:flex;
     margin-top: 10px;
     flex-direction:column 2;
@@ -13,13 +13,19 @@ export const FuncStyle = styled.div`
         width: 20%;
     }
     
-    .bla{
+    .desc{
+        display:flex;
         width: 60%;
+        justify-content: space-between;
+    }
+
+    .desc p:last-child{
+        display:flex;
+        justify-items:flex-end;   
     }
     
     .preco{
         justify-content:flex-end;
-        align-self:center;
         width: 20%;
     }
 
@@ -47,33 +53,12 @@ export const Tabela = styled.div`
     flex-direction:column;
     width:70%;
 
-    button {
-    height: 40px
-    font-weight: bold;
-    border: 2px solid #5ce1e6;
-    background: #abcd;
-    margin-left:15px;
-    width: 100px;
-    justify-content:center;
-    padding:5px;    
-    border-radius: 5px;
-    transition: 0.15s;
+    .finalizar {
+        display:flex;
+        justify-content:flex-end;  
+        align-items:flex-end;
     }
 
-    input{
-        height: 40px;
-        padding: 10px;
-        border-radius: 5px;
-        max-width: 300px;
-        border:2px solid;
-        background: #F2FDFD;
-        margin-bottom: 10px;
-        color:#000;
-        border-color: #5ce1e6;
-
-        -moz-appearance:textfield;
-        appearance:textfield;
-    }
 `;
 
 

@@ -1,51 +1,24 @@
 import styled from 'styled-components';
 
-export const ProdutoStyle = styled.div`
-    display:flex;
-    margin-top: 10px;
-    flex-direction:column 2;
-    width: 100%;
-    height:75px;
-    background-color: #1d1d1d;
-    border-radius:5px;
-    
-    .nome{
-        width: 20%;
-    }
-    
-    .bla{
-        width: 60%;
-    }
-    
-    .preco{
-        justify-content:flex-end;
-        align-self:center;
-        width: 20%;
-    }
 
-    div{
-        border-radius: 5px ;
-        margin-top:10px;
-        padding: 5px;
-        display:flex;
-     
-    }
-    
-
-`;
+export const Header = styled.div`
+    display: flex;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    justify-content:center;
+`
 
 export const Wrap = styled.div`
-    display:flex;
-    flex-direction:column 2;
-    justify-content:space-between;
-    }
+    display: flex;
 `
 
 export const Tabela = styled.div`
     display:flex;
-    margin-top:10px;
-    flex-direction:column;
-    width:70%;
+    flex-direction:row;
+    width:100%;
+    justify-content:center;
+
     button {
     height: 40px
     font-weight: bold;
@@ -71,7 +44,6 @@ export const Tabela = styled.div`
     } 
 
     input{
-        
         height: 40px;
         padding: 10px;
         border-radius: 5px;
@@ -83,6 +55,3 @@ export const Tabela = styled.div`
         border-color: #5ce1e6;
     }
 `;
-
-
-

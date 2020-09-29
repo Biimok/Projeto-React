@@ -13,26 +13,32 @@ export const Container = styled.div`
     padding:20px;
   }
   ul {
+    padding:10px;
     display: flex;
     list-style: none;
     align-items:flex-end;
+    
+    
     li {
       font-size: 15px;
-      padding: 10px;
-
+      padding: 0px;
+      color: #5ce1e6;
+      
+      
+      
       & + li {
         margin-left: 10px;
       }
 
       a {
-        color: #1277b8;
         text-decoration: none;
+        color: #5ce1e6;
 
         &:hover{
-            color: #565955;            
+            color: #ffffff;            
             transition:0.5s;
         }
-      }
+      }      
     }
   }
 `;
@@ -41,3 +47,4 @@ export const Title = styled.h1`
   font-size: 30px;
   color: #535652;
 `;
+

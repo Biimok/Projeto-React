@@ -12,16 +12,13 @@ input{
     height: 40px;
     padding: 10px;
     border-radius: 5px;
-    max-width: 300px;
+    width: 300px;
     border:2px solid;
     background: #F2FDFD;
     margin-bottom: 10px;
     color:#000;
     border-color: #5ce1e6;
 
-    
-    
-    
 }    
 button {
     display:flex;
@@ -29,7 +26,6 @@ button {
     font-weight: bold;
     border: 2px solid #5ce1e6;
     background: #abcd;
-    
     width: 300px;
     align-self:center;
     justify-content:center;
@@ -46,6 +42,7 @@ button {
     }
 }
 `;
+
 export const Textarea = styled.textarea`{
     resize: none;
     height: 100px;
@@ -54,7 +51,7 @@ export const Textarea = styled.textarea`{
     border-radius: 5px;
     max-width: 300px;
     border:2px solid;
-    background:#F2F2F2;
+    background: #F2FDFD;
     margin-bottom: 10px;
     border-color: #5ce1e6;
 

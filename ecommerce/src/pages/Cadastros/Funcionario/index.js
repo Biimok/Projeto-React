@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
 import { Link } from "react-router-dom";
-
+import {Wrap, Tabela, Header} from './styles'
+import logo from "../../../assets/logo3.png";
 import {Form} from '../../../styles/formStyle';
+import Sidebar from '../../../components/Sidebar';
 
 const Funcionario = () => {
     const [nome, setNome] = useState('');
@@ -24,7 +26,8 @@ const Funcionario = () => {
        }
 
        try {
-           await api.put(`funcionario/${Funcionario.id}`, params);
+           await api.post(`funcionario`, params);
+           alert('Sucesso');
            setNome('');
            setCpf('');
            
@@ -37,25 +40,31 @@ const Funcionario = () => {
 
     return (
         <>
-            <h1>Funcionario</h1>
-            <Form onSubmit={handleAddFuncionario}>
-                <input value={nome} 
-                onChange={e => setNome(e.target.value)} 
-                type='text' 
-                placeholder='Digite seu nome'></input>
-                
-                <input value={cpf} 
-                onChange={e => setCpf(e.target.value)} 
-                type='text' 
-                placeholder='Digite seu cpf'></input>                             
-                
-                <Link to='/funcionario'><button type='submit'>Enviar</button></Link>
-            </Form>
-            <p>{errorMessage}</p>
+            <Header>
+                <img src={logo} alt="logo"></img>
+            </Header>
+            <Wrap> 
+            <Sidebar></Sidebar>
+                <Tabela>
+                    <div className="alinhamento">
+                        <Form onSubmit={handleAddFuncionario}>
+                            <input value={nome} 
+                            onChange={e => setNome(e.target.value)} 
+                            type='text' 
+                            placeholder='Digite seu nome'></input>
+                            
+                            <input value={cpf} 
+                            onChange={e => setCpf(e.target.value)} 
+                            type='text' 
+                            placeholder='Digite seu cpf'></input>                             
+                            
+                            <button type='submit'>Enviar</button>
+                        </Form>
+                    </div>
+                    <p>{errorMessage}</p>
+                </Tabela>
+            </Wrap>
         </>
-        //74424131025
-        //57753425005
-        //62730162089
     )
 }
 export default Funcionario;

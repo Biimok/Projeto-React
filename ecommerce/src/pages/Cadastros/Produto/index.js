@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {Form, Textarea} from '../../../styles/formStyle';
-
+import {Wrap, Tabela, Header} from './styles'
+import logo from "../../../assets/logo3.png";
+import Sidebar from '../../../components/Sidebar';
 import api from '../../../services/api';
 
 
@@ -36,8 +38,6 @@ const Produtos = () => {
         nomeCategoria: nomeCategoria,
         fotoLink: "http://residencia-ecommerce.us-east-1.elasticbeanstalk.com/produto/3/foto"
        }
-
-       console.log(params);
        try {
            await api.post('produto', params);
 
@@ -86,8 +86,14 @@ const Produtos = () => {
 
     return (
         <>
-            <h1>Produto</h1>
-            <Form onSubmit={handleAddProduto}>
+            <Header>
+                <img src={logo} alt="logo"></img>
+            </Header>
+            <Wrap> 
+            <Sidebar></Sidebar>
+                <Tabela>
+                    <div className="alinhamento">
+                    <Form onSubmit={handleAddProduto}>
                 <input value={nome} 
                 onChange={e => setNome(e.target.value)} 
                 type='text' 
@@ -137,7 +143,10 @@ const Produtos = () => {
                 
                 <button type='submit'>Enviar</button>
             </Form>
-            <p>{errorMessage}</p>
+                    </div>
+                    <p>{errorMessage}</p>
+                </Tabela>
+            </Wrap>
         </>
     )
 }
